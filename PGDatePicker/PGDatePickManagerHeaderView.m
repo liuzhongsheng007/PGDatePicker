@@ -127,11 +127,11 @@
 
 - (void)setLanguage:(NSString *)language {
     _language = language;
-    NSString *cancelButtonText = [NSBundle pg_localizedStringForKey:@"cancelButtonText" language:self.language];
-    [self.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
+//    NSString *cancelButtonText = [NSBundle pg_localizedStringForKey:@"cancelButtonText" language:self.language];
+    [self.cancelButton setTitle:self.cancelButtonText forState:UIControlStateNormal];
     
-    NSString *confirmButtonText = [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
-    [self.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
+//    NSString *confirmButtonText = [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
+    [self.confirmButton setTitle:self.confirmButtonText forState:UIControlStateNormal];
 }
 
 #pragma Getter
@@ -188,7 +188,7 @@
 
 - (NSString *)cancelButtonText {
     if (!_cancelButtonText) {
-        NSString *cancelButtonText = [NSBundle pg_localizedStringForKey:@"cancelButtonText" language:self.language];
+        NSString *cancelButtonText = @"取消";
         _cancelButtonText = cancelButtonText;
     }
     return _cancelButtonText;
@@ -210,7 +210,7 @@
 
 - (NSString *)confirmButtonText {
     if (!_confirmButtonText) {
-        NSString *confirmButtonText = [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
+        NSString *confirmButtonText = @"确定";
         _confirmButtonText = confirmButtonText;
     }
     return _confirmButtonText;
@@ -231,3 +231,4 @@
 }
 
 @end
+
